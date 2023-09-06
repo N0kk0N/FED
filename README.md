@@ -57,7 +57,25 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
+  <img src="readme-images/screenshot_3.png" width="375px" alt="Screenshot van devosse.nl waarbij een screenreader de homepage voorleest">
+  <img src="readme-images/screenshot_4.png" width="375px" alt="Screenshot van devosse.nl waarbij een screenreader de links voorleest">
 
+  <ul>
+    <li>Headings worden correct voorgelezen op de website</li>
+    <li>Afbeeldingen hebben geen goede alt tekst</li>
+    <li>Links op de website worden correct voorgelezen</li>
+    <li>Aantal knoppen werden niet gevonden of voorgelezen<li>
+    <li>De webshop is lastig te gebruiken op de telefoon</li>
+    <li>Links zijn niet altijd duidelijk waar ze naar toe gaan</li>
+  </ul>
+
+  <img src="readme-images/checklist_1" width="375px" alt="WCAG checklist pagina 1">
+  <img src="readme-images/checklist_2" width="375px" alt="WCAG checklist pagina 2">
+  <img src="readme-images/checklist_3" width="375px" alt="WCAG checklist pagina 3">
+  <img src="readme-images/checklist_4" width="375px" alt="WCAG checklist pagina 4">
+  <img src="readme-images/checklist_5" width="375px" alt="WCAG checklist pagina 5">
+  <img src="readme-images/checklist_6" width="375px" alt="WCAG checklist pagina 6">
+  <img src="readme-images/checklist_7" width="375px" alt="WCAG checklist pagina 7">
 </details>
 
 
