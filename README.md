@@ -69,13 +69,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
     <li>Links zijn niet altijd duidelijk waar ze naar toe gaan</li>
   </ul>
 
-  <img src="images/checklist_1.png" width="375px" alt="WCAG checklist pagina 1">
-  <img src="images/checklist_2.png" width="375px" alt="WCAG checklist pagina 2">
-  <img src="images/checklist_3.png" width="375px" alt="WCAG checklist pagina 3">
-  <img src="images/checklist_4.png" width="375px" alt="WCAG checklist pagina 4">
-  <img src="images/checklist_5.png" width="375px" alt="WCAG checklist pagina 5">
-  <img src="images/checklist_6.png" width="375px" alt="WCAG checklist pagina 6">
-  <img src="images/checklist_7.png" width="375px" alt="WCAG checklist pagina 7">
+  <img src="images/checklist_1.jpg" width="375px" alt="WCAG checklist pagina 1">
+  <img src="images/checklist_2.jpg" width="375px" alt="WCAG checklist pagina 2">
+  <img src="images/checklist_3.jpg" width="375px" alt="WCAG checklist pagina 3">
+  <img src="images/checklist_4.jpg" width="375px" alt="WCAG checklist pagina 4">
+  <img src="images/checklist_5.jpg" width="375px" alt="WCAG checklist pagina 5">
+  <img src="images/checklist_6.jpg" width="375px" alt="WCAG checklist pagina 6">
+  <img src="images/checklist_7.jpg" width="375px" alt="WCAG checklist pagina 7">
 </details>
 
 
