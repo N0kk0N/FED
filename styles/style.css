@@ -2,12 +2,14 @@
 /* CSS REMEDY */
 /**************/
 *, *::after, *::before {
-  box-sizing:border-box;  
+  box-sizing:border-box;
+  margin: 0;
+  padding: 0;
 }
 
-
-
-
+body li {
+	list-style-type: none;
+}
 
 
 /*********************/
@@ -15,12 +17,26 @@
 /*********************/
 :root {
 	/* startje */
-	--color-text:#111;
 	--color-background:#eee;
+	--main-color: #DFF3F7;
+	--secondary-color: #D70D8C;
+	--main-text-color: black;
+
+	--letter-spacing: .6px;
+	--line-height: 25px;
+
+	--standard-font: 'Raleway', sans-serif;
+
+	--thin-font-weight: 300;
+	--thin-font-text-color: black;
+	
+	--heading-font-weight: 700;
+
+	--h2-font-size: 1.3em;
+
+	--regular-text-weight: 400;
+	--regular-text-size: 1.125rem;
 }
-
-
-
 
 
 /****************/
@@ -28,4 +44,284 @@
 /****************/
 
 /* jouw code */
+
+/* HEADER */
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100vw;
+	height: auto;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	border-bottom: 3px solid lightgray;
+	background-color: white;
+}
+
+header a img {
+	margin-left: 1em;
+	width: 70%;
+	height: auto;
+}
+
+header div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 3em;
+	height: auto;
+	margin-right: 2em;
+}
+
+header div button {
+	width: 100%;
+	height: 100%;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	font-family: var(--standard-font);
+	font-weight: var(--thin-font-weight);
+	color: var(--thin-font-text-color);
+}
+
+header div button img {
+	width: 75%;
+	height: auto;
+}
+
+
+/* MAIN */
+
+/* SLIDESHOW */
+
+main div:first-of-type {
+	position: relative;
+	width: 100vw;
+	height: 10em;
+}
+
+main div:first-of-type img {
+	width: 100%;
+	height: 10em;
+	position: absolute;
+	animation: fade-in-fade-out 10s infinite;
+}
+
+main div:first-of-type img:nth-of-type(2) {
+	animation-delay: 5s;
+}
+
+@keyframes fade-in-fade-out {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+/* ARTICLE */
+
+main>article:nth-of-type(1) {
+	width: 90vw;
+	height: 13em;
+	background-color: var(--main-color);
+	border-radius: 10px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	z-index: 1;
+	transform: translateY(-1em);
+}
+
+main article:first-of-type h1 {
+	font-family: var(--standard-font);
+	font-weight: var(--heading-font-weight);
+	font-size: 1.5em;
+	line-height: var(--line-height);
+	letter-spacing: var(--letter-spacing);
+	color: var(--main-text-color);
+	width: 90%;
+	margin-top: 1em;
+	overflow-y: hidden;
+}
+
+main article:first-of-type p {
+	font-family: var(--standard-font);
+	font-weight: var(--regular-text-weight);
+	font-size: var(--regular-text-size);
+	line-height: var(--line-height);
+	letter-spacing: var(--letter-spacing);
+	color: var(--main-text-color);
+	width: 80%;
+	margin-top: 1em;
+}
+
+/* FIRST SECTION */
+
+main section:first-of-type {
+	margin-top: 1em;
+	width: 100vw;
+	height: auto;
+}
+
+main section:first-of-type h2 {
+	font-family: var(--standard-font);
+	font-weight: var(--heading-font-weight);
+	font-size: var(--h2-font-size);
+	line-height: var(--line-height);
+	letter-spacing: var(--letter-spacing);
+	color: var(--main-text-color);
+	margin-left: .5em;
+}
+
+main section:first-of-type ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	margin-top: 1em;
+}
+
+main section:first-of-type ul li {
+	margin-bottom: 1em;
+}
+
+main section:first-of-type ul li a {
+	font-family: var(--standard-font);
+	font-weight: var(--heading-font-weight);
+	letter-spacing: var(--letter-spacing);
+	line-height: var(--line-height);
+	color: var(--secondary-color);
+	text-decoration: none;
+	border: 2px solid var(--secondary-color);
+	border-radius: 25px;
+	display: block;
+	text-align: center;
+	width: 90vw;
+	padding: .3em 0em .3em 0em;
+}
+
+/* SECOND SECTION */
+
+main section:nth-of-type(2) {
+	background-color: var(--main-color);
+	width: 90vw;
+	height: 19em;
+	margin: auto;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+main section:nth-of-type(2) h2 {
+	font-family: var(--standard-font);
+	font-weight: var(--heading-font-weight);
+	font-size: var(--h2-font-size);
+	line-height: var(--line-height);
+	letter-spacing: var(--letter-spacing);
+	color: var(--main-text-color);
+	margin-top: 2em;
+}
+
+main section:nth-of-type(2) p {
+	font-family: var(--standard-font);
+	font-weight: var(--regular-text-weight);
+	font-size: 1em;
+	line-height: var(--line-height);
+	letter-spacing: var(--letter-spacing);
+	color: var(--main-text-color);
+	margin-top: 1em;
+}
+
+main section:nth-of-type(2) a {
+	font-family: var(--standard-font);
+	font-weight: var(--heading-font-weight);
+	font-size: 1em;
+	line-height: var(--line-height);
+	letter-spacing: var(--letter-spacing);
+	background-color: var(--secondary-color);
+	border-radius: 25px;
+	color: white;
+	text-decoration: none;
+	display: block;
+	width: 90%;
+	text-align: center;
+	padding: .7em 0em .7em 0em;
+	margin-top: 1em;
+	box-shadow: 0px 5px 10px 0px grey;
+}
+
+/* THIRD SECTION */
+
+main section:nth-of-type(3) {
+    margin-top: 2em;
+    background-color: orange;
+    width: 100vw;
+    height: 50em;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+main section:nth-of-type(3) ul {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+main section:nth-of-type(3) ul li h2 {
+    font-family: var(--standard-font);
+    font-weight: var(--heading-font-weight);
+    font-size: var(--h2-font-size);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+}
+
+main section:nth-of-type(3) ul li a {
+    font-family: var(--standard-font);
+    font-weight: var(--thin-font-weight);
+    font-size: 1em;
+    color: var(--secondary-color);
+}
+
+main section:nth-of-type(3) section {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+main section:nth-of-type(3) section::-webkit-scrollbar {
+	display: none;
+}
+
+main section:nth-of-type(3) section article {
+    background-color: lightblue;
+    width: 80vw;
+    height: 30em;
+    border-radius: 10px;
+    margin-right: 1em;
+	margin-left: 1em;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+}
+
+
+
 
