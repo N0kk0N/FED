@@ -122,9 +122,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
+  - HTML en CSS zien er beide goed uit.
+  - Goed gebruik van custom properties.
+  - Iets meer focus op accessibility
   - ...
 
 </details>
@@ -155,8 +155,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
+  - HTML en CSS zien er nog steeds erg goed en netjes uit.
+  - Vergeet het werk niet op Github te zetten.
   - nog een punt
 - ...
 
