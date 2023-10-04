@@ -228,6 +228,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Stand van zaken
   hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
 
+  <img src="readme-images/HTML_5.png" width="375px" alt="Screenshot van mijn uiteindelijk HTML code van de index pagina.">
+  <img src="readme-images/HTML_6.png" width="375px" alt="Screenshot van mijn uiteindelijke HTML code van de nieuws pagina.">
+  <img src="readme-images/CSS_1.png" width="375px" alt="Screenshot van mijn uiteindelijke CSS code.">
+  <img src="readme-images/JavaScript.png" width="375px" alt="Screenshot van mijn uiteindelijke JavaScript code.">
+
   <ul>
     <li>Mijn HTML en CSS is 99% af. Ik hoef het alleen nog maar een beetje te tweaken.</li>
     <li>Responsiveness gaat ook goed, hoef nog maar een paar kleine dingetjes aan te passsen.</li>
