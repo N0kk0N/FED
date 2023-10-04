@@ -715,7 +715,7 @@ main section:nth-of-type(2) p {
 	overflow-x: auto;
 }
 
-main section:nth-of-type(3) > ul:first-of-type {
+.index main section:nth-of-type(3) > ul:first-of-type {
 	display: flex;
 	justify-content: space-between;
 	margin-left: 1em;
@@ -1258,7 +1258,7 @@ footer section:nth-of-type(3) ul li a {
 	margin-top: 2em;
 	margin-bottom: 2em;
 	gap: 1em;
-	width: 95%;
+	width: 100%;
 }
 
 .news main section:last-of-type ul li a {
