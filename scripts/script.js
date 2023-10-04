@@ -1,30 +1,6 @@
 // // JavaScript Document
 // console.log("hi");
 
-// // SLIDESHOW
-
-// var previousButton
-// var nextButton
-// var slideShow   
-
-// previousButton = document.querySelector("main div:first-of-type ul li:first-of-type button");
-// nextButton = document.querySelector("main div:first-of-type ul li:last-of-type button");
-// slideShow = document.querySelector("main div:first-of-type figure");
-
-// previousButton.onclick = previousSlide;
-
-// function previousSlide() {
-//     slideShow.classList.add("animationPaused");
-//     console.log("terug");
-// }
-
-// nextButton.onclick = nextSlide;
-
-// function nextSlide () {
-//     slideShow.classList.add("animationPaused");
-//     console.log("volgende");
-// }
-
 // HAMBURGER MENU VERSCHIJNEN
 
 var menuButton = document.querySelector('header nav div button');
@@ -34,11 +10,13 @@ var closeButton = document.querySelector('header .hamburger_menu ul:first-of-typ
 menuButton.addEventListener("click", function() {
   hamburgerMenu.style.display = "block";
   document.body.style.overflow = "hidden";
+  menuButton.setAttribute("aria-expanded", "true");
 });
 
 closeButton.addEventListener("click", function() {
   hamburgerMenu.style.display = "none";
   document.body.style.overflow = "auto";
+  menuButton.setAttribute("aria-expanded", "close");
 });
 
 
@@ -53,10 +31,12 @@ activiteitenButton.addEventListener("click", function() {
     activiteiten.style.display = "none";
     firstArrowSVG.style.transform = 'rotate(0deg)';
     activiteitenButton.style.borderBottom = "2px solid lightgrey"
+    activiteitenButton.setAttribute("aria-expanded", "false")
   } else {
     activiteiten.style.display = "block";
     firstArrowSVG.style.transform = "rotate(180deg)";
-    activiteitenButton.style.borderBottom = "none"
+    activiteitenButton.style.borderBottom = "none";
+    activiteitenButton.setAttribute("aria-expanded", "true");
   }
 });
 
@@ -71,10 +51,84 @@ overOnsButton.addEventListener("click", function() {
     overOns.style.display = "none";
     secondArrowSVG.style.transform = 'rotate(0deg)';
     overOnsButton.style.borderBottom = "2px solid lightgrey"
+    overOnsButton.setAttribute("aria-expanded", "false")
   } else {
     overOns.style.display = "block";
     secondArrowSVG.style.transform = "rotate(180deg)";
-    overOnsButton.style.borderBottom = "none"
+    overOnsButton.style.borderBottom = "none";
+    overOnsButton.setAttribute("aria-expanded", "true");
+  }
+});
+
+
+// UITKLAP MENU ACTIVITEITEN MET HULP VAN CHATGPT
+
+var activiteitenUitklapButton = document.querySelector("header nav ul li:first-of-type button");
+var activiteitenSVG = document.querySelector("header nav ul li:first-of-type button svg");
+var activiteitenUitklapMenu = document.querySelector("header nav ul li:first-of-type ul");
+
+var kinderfeestjes = document.querySelector("header nav > ul li:nth-of-type(2)");
+
+// Functie om het activiteiten menu te sluiten
+function sluitActiviteitenMenu() {
+  activiteitenUitklapMenu.style.display = "none";
+  activiteitenUitklapButton.setAttribute("aria-expanded", "false")
+  activiteitenSVG.style.transform = 'rotate(0deg)';
+}
+
+// Eventlistener voor het activiteiten menu openen/sluiten
+activiteitenUitklapButton.addEventListener("click", function(event) {
+  event.stopPropagation(); // Voorkom dat het klikken op de knop de body-click event activeert
+
+  if (activiteitenUitklapMenu.style.display === "flex" || activiteitenUitklapMenu.style.display === "") {
+    sluitActiviteitenMenu();
+  } else {
+    activiteitenUitklapMenu.style.display = "flex";
+    activiteitenUitklapButton.setAttribute("aria-expanded", "true")
+    activiteitenSVG.style.transform = 'rotate(180deg)';
+  }
+});
+
+// Eventlistener voor body click om het activiteiten menu te sluiten
+document.body.addEventListener("click", function(event) {
+  // Controleer of het geklikte element zich buiten het activiteiten menu bevindt
+  if (!activiteitenUitklapMenu.contains(event.target)) {
+    sluitActiviteitenMenu();
+  }
+});
+
+
+// UITKLAP MENU OVER ONS MET HULP VAN CHATGPT
+
+var overOnsUitklapButton = document.querySelector("header nav ul li:nth-of-type(4) button");
+var overOnsSVG = document.querySelector("header nav ul li:nth-of-type(4) button svg");
+var overOnsUitklapMenu = document.querySelector("header nav ul li:nth-of-type(4) ul");
+
+// Functie om het over ons menu te sluiten
+function sluitOverOnsMenu() {
+  overOnsUitklapMenu.style.display = "none";
+  overOnsUitklapButton.setAttribute("aria-expanded", "false")
+  overOnsSVG.style.transform = 'rotate(0deg)';
+}
+
+// Eventlistener voor het over ons menu openen/sluiten
+overOnsUitklapButton.addEventListener("click", function(event) {
+  event.stopPropagation(); // Voorkom dat het klikken op de knop de body-click event activeert
+
+  if (overOnsUitklapMenu.style.display === "flex" || overOnsUitklapMenu.style.display === "") {
+    sluitOverOnsMenu();
+  } else {
+    overOnsUitklapMenu.style.display = "flex";
+    overOnsUitklapButton.setAttribute("aria-expanded", "true")
+    overOnsSVG.style.transform = 'rotate(180deg)';
+  }
+});
+
+// Eventlistener voor body click om het over ons menu te sluiten
+document.body.addEventListener("click", function(event) {
+  // Controleer of het geklikte element zich buiten het over ons menu bevindt
+  if (!overOnsUitklapMenu.contains(event.target)) {
+    sluitOverOnsMenu();
   }
 });
 
@@ -111,6 +165,8 @@ scrollNextButton.addEventListener('click', () => {
     console.log('volgende');
   }
 });
+
+
 
 
 

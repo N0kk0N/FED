@@ -15,6 +15,8 @@ body li {
 
 body {
 	padding-top: 4em;
+	width: 100vw;
+	overflow-x: hidden;
 }
 
 @media only screen and (min-width: 861px) {
@@ -22,6 +24,20 @@ body {
 	padding-top: 6em;
 }
 }
+
+
+/* SCREEN READER */
+.sr-only {
+	clip: rect(0 0 0 0); 
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	white-space: nowrap; 
+	width: 1px;
+	
+	/* https://css-tricks.com/inclusively-hidden/ */
+}
+
 
 /*********************/
 /* CUSTOM PROPERTIES */
@@ -57,6 +73,10 @@ body {
 /* jouw code */
 
 /* HEADER */
+
+header {
+	max-width: 10em;
+}
 
 header nav {
 	display: flex;
@@ -107,7 +127,7 @@ header nav div:first-of-type button img {
 
 header nav div:first-of-type button span {
 	font-family: var(--standard-font);
-	font-weight: var(--thin-font-text-color);
+	font-weight: var(--thin-font-weight);
 	font-size: 12px;
 }
 
@@ -120,7 +140,7 @@ header nav ul {
 	justify-content: center;
 	align-items: center;
 	gap: 1em;
-
+	
 	margin-right: 2em;
 }
 
@@ -164,19 +184,13 @@ header nav ul a svg {
 	transition-duration: .25s;
 }
 
-
 /* UITKLAP MENU */
 
-header nav ul li:nth-of-type(1):hover ul,
-header nav ul li:nth-of-type(2):hover ul {
-	display: flex;
-}
-  
 header nav ul li:nth-of-type(1) ul {
 	background-color: white;
 
 	flex-direction: column;
-	margin-top: 12em;
+	margin-top: 11.7em;
 	margin-left: 1em;
 	width: 10em;
 	height: 10em;
@@ -184,27 +198,82 @@ header nav ul li:nth-of-type(1) ul {
 
 	border-radius: 0px 0px 10px 10px;
 
+	background-color: white;
+
 	display: none;
 }
 
-header nav ul li:nth-of-type(4):hover ul,
-header nav ul li:nth-of-type(6):hover ul {
+header nav ul li:nth-of-type(1) button {
+	font-family: var(--standard-font);
+	font-weight: var(--heading-font-weight);
+	font-size: 16px;
+
+	background-color: transparent;
+	border: none;
+
 	display: flex;
+	text-align: center;
+	align-items: center;
+	gap: .5em;
 }
+
+header nav ul li:nth-of-type(1) button:hover {
+	cursor: pointer;
+	border-bottom: 2px solid var(--secondary-color);
+	color: var(--secondary-color);
+}
+
+header nav ul li:nth-of-type(1) button:focus {
+	color: var(--secondary-color);
+}
+
+header nav ul li:nth-of-type(1) button svg {
+	width: 1em;
+}
+
 
 header nav ul li:nth-of-type(4) ul {
 	background-color: white;
 
 	flex-direction: column;
-	margin-top: 18em;
+	margin-top: 17.7em;
 	margin-left: 1em;
 	width: 10em;
 	height: 16em;
 	position: absolute;
+	background-color: white;
 
 	border-radius: 0px 0px 10px 10px;
 
 	display: none;
+}
+
+header nav ul li:nth-of-type(4) button {
+	font-family: var(--standard-font);
+	font-weight: var(--heading-font-weight);
+	font-size: 16px;
+
+	background-color: transparent;
+	border: none;
+
+	display: flex;
+	text-align: center;
+	align-items: center;
+	gap: .5em;
+}
+
+header nav ul li:nth-of-type(4) button:hover {
+	cursor: pointer;
+	border-bottom: 2px solid var(--secondary-color);
+	color: var(--secondary-color);
+}
+
+header nav ul li:nth-of-type(4) button:focus {
+	color: var(--secondary-color);
+}
+
+header nav ul li:nth-of-type(4) button svg {
+	width: 1em;
 }
 
 
@@ -238,8 +307,7 @@ header .hamburger_menu {
 	display: none;
 	overflow-y: auto;
 	overflow-x: hidden;
-	height: 100vh;
-	max-height: 100vh;
+	height: 100%;
 }
 
 body.hamburger-menu-open {
@@ -282,7 +350,8 @@ header .hamburger_menu ul:nth-of-type(2) {
 	justify-content: center;
 	align-items: center;
 
-	width: 100%;
+	width: 100vw;
+	overflow-x: hidden;
 	margin-top: 1em;
 }
 
@@ -552,8 +621,7 @@ main section:first-of-type ul li a {
 		margin-left: 2em;
 	}
 	main section:nth-of-type(4) h2 {
-		margin-left: 3em;
-		color: green;	
+		margin-left: 2em !important;
 	}
   }
   
@@ -640,7 +708,7 @@ main section:nth-of-type(2) p {
 
 /* THIRD SECTION */
 
-main section:nth-of-type(3) {
+.index main section:nth-of-type(3) {
 	margin-top: 3em;
 	width: 100vw;
 	height: auto;
@@ -669,7 +737,7 @@ main section:nth-of-type(3) ul:first-of-type li a {
 	color: var(--secondary-color);
 }
 
-main section:nth-of-type(3) section {
+main section:nth-of-type(3) > section {
 	width: 100%;
 	height: fit-content;
 	display: flex;
@@ -697,17 +765,15 @@ main section:nth-of-type(3) section article {
 }
 
 @media only screen and (min-width: 1024px) {
-	main section:nth-of-type(3) > ul:last-of-type {
+	.index main section:nth-of-type(3) > ul:last-of-type {
 		display: none !important;
-		background-color: orange;
 	}
-	main section:nth-of-type(3) section {
+	main section:nth-of-type(3) > section {
 		display: flex;
 		justify-content: center;
-		gap: 3em;
+		gap: 1em;
 
 		overflow-x: hidden;
-
 	}
   }
 
@@ -719,7 +785,7 @@ main section:nth-of-type(3) section article a {
 	text-decoration: none;
 	cursor: pointer;
 	height: 30em;
-	width: 80vw;
+	width: auto;
 
 	display: flex;
 	flex-direction: column;
@@ -729,6 +795,8 @@ main section:nth-of-type(3) section article a img {
 	width: 20em;
 	height: 8em;
 	border-radius: 5px 5px 0px 0px;
+
+	order: 1;
 }
 
 main section:nth-of-type(3) section article section {
@@ -736,6 +804,8 @@ main section:nth-of-type(3) section article section {
 	flex-direction: column;
 	flex: 1;
 	width: 20em;
+	
+	order: 2;
 }
 
 main section:nth-of-type(3) section article section h3 {
@@ -746,6 +816,7 @@ main section:nth-of-type(3) section article section h3 {
 	margin-left: .5em;
 	margin-top: .5em;
 	width: 95%;
+
 }
 
 main section:nth-of-type(3) section article section p:first-of-type {
@@ -755,7 +826,7 @@ main section:nth-of-type(3) section article section p:first-of-type {
 	letter-spacing: var(--letter-spacing);
 	line-height: var(--line-height);
 	color: black;
-	width: 20em;
+	width: 100%;
 
 	margin-left: .5em;
 	margin-top: 1em;
@@ -770,8 +841,10 @@ main section:nth-of-type(3) section article a ul {
 	flex-direction: row;
 	height: 2em;
 	align-items: center;
-	width: 18em;
+	width: 10em;
 	margin-left: 1em;
+
+	order: 3;
 }
 
 main section:nth-of-type(3) section article a ul li p {
@@ -817,6 +890,7 @@ main section:nth-of-type(4) h2 {
 	color: black;
 	margin-bottom: 1em;
 	margin-left: .5em;
+
 }
 
 main section:nth-of-type(4) ul {
@@ -993,6 +1067,10 @@ footer section:nth-of-type(3) ul li a {
 
 /* NEWS PAGE */
 
+.news {
+	overflow-x: hidden;
+}
+
 .news main section:nth-of-type(1) {
 	display: flex;
 	flex-direction: column;
@@ -1040,27 +1118,42 @@ footer section:nth-of-type(3) ul li a {
 
 /* NEWS ARTICLES */
 
-.news main > ul:first-of-type {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
+.news main section:nth-of-type(2) {
 	width: 100%;
+	height: auto;
+}
+
+.news main section:nth-of-type(2) ul:first-of-type {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 10px;
+	grid-auto-flow: dense;
+
+	margin: auto;
+
+	width: 90%;
 	padding-bottom: 2em;
 }
-  
-.news main > ul:first-of-type li {
+
+.news main section:nth-of-type(2) ul:first-of-type li {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 
+	height: fit-content;
+
 	margin-top: 2em;
-	width: 90vw;
+	width: 100%;
+	transition-duration: 100ms;
 }
 
-.news main > ul:first-of-type li a {
+.news main section:nth-of-type(2) ul:first-of-type li:hover {
+	transform: scale(1.02);
+	transition-duration: 100ms;
+}
+
+.news main section:nth-of-type(2) ul:first-of-type li article {
 	display: flex;
 	flex-direction: column;
 
@@ -1070,33 +1163,48 @@ footer section:nth-of-type(3) ul li a {
 	text-decoration: none;
 	border: 2px solid lightgray;
 	border-radius: 10px;
-
 }
 
-.news main ul:first-of-type li a article {
+
+@media only screen and (min-width: 678px) {
+	.news main section:nth-of-type(2) ul:first-of-type li article {
+		height: 30em;
+	}
+  }
+
+.news main section:nth-of-type(2) ul:first-of-type li article a {
 	display: flex;
 	flex-direction: column;
+	text-decoration: none;
+
 	width: 100%;
+	height: 100%;
 	background-color: white;
+	border-radius: 10px;
 }
 
-.news main ul:first-of-type li a article img {
+.news main section:nth-of-type(2) ul:first-of-type li article a img {
 	width: auto;
 	height: auto;
 
 	border-radius: 10px 10px 0px 0px;
+
+	order: 1;
 }
 
-.news main ul:first-of-type li a article section {
+.news main section:nth-of-type(2) ul:first-of-type li article a section {
 	display: flex;
+	flex-grow: 1;
 	flex-direction: column;
-	background-color: orange;
-	width: 90vw;
+	width: 95%;
+
+	order: 2;
+	flex: 1;
 
 	height: auto;
 }
 
-.news main ul:first-of-type li a article section h3 {
+.news main section:nth-of-type(2) ul:first-of-type li article a section h3 {
 	font-family: var(--standard-font);
 	font-weight: var(--heading-font-weight);
 	font-size: 20px;
@@ -1108,7 +1216,7 @@ footer section:nth-of-type(3) ul li a {
 	margin-left: .5em;
 }
 
-.news main ul:first-of-type li a article section p:first-of-type {
+.news main section:nth-of-type(2) ul:first-of-type li article a section p:first-of-type {
 	font-family: var(--standard-font);
 	font-weight: var(--regular-text-weight);
 	letter-spacing: var(--letter-spacing);
@@ -1118,10 +1226,11 @@ footer section:nth-of-type(3) ul li a {
 	color: black;
 	margin-top: 1em;
 	margin-left: .5em;
-	width: 100%;
+	max-width: 100%;
+	/* width: 100%; */
 }
 
-.news main ul:first-of-type li a article p:last-of-type {
+.news main section:nth-of-type(2) ul:first-of-type li article a > p:last-of-type {
 	font-family: var(--standard-font);
 	font-weight: var(--heading-font-weight);
 	font-size: 18px;
@@ -1130,9 +1239,11 @@ footer section:nth-of-type(3) ul li a {
 	margin-top: 1em;
 	margin-bottom: 1em;
 	margin-left: .5em;
+
+	order: 3;
 }
 
-.news main ul:first-of-type li a article p:last-of-type svg {
+.news main section:nth-of-type(2) ul:first-of-type li article a p:last-of-type svg {
 	color: var(--secondary-color);
 }
 
@@ -1147,6 +1258,7 @@ footer section:nth-of-type(3) ul li a {
 	margin-top: 2em;
 	margin-bottom: 2em;
 	gap: 1em;
+	width: 95%;
 }
 
 .news main section:last-of-type ul li a {
